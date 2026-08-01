@@ -200,3 +200,178 @@ Start navigating from the top of the Linux file system.
 ⭐ Interview
 
 `/` is the root directory, not the home directory.
+
+---
+
+# CMD-008 | mkdir (Make Directory)
+
+📌 Purpose
+
+Create a new directory.
+
+🧾 Syntax
+
+```bash
+mkdir <directory_name>
+```
+
+💡 Common Usage
+
+```bash
+mkdir Investigation
+mkdir Reports
+mkdir Evidence
+```
+
+🛡️ SOC Use
+
+Create folders for evidence, reports and malware samples.
+
+⭐ Interview
+
+Creates directories only.
+
+---
+
+# CMD-009 | touch
+
+📌 Purpose
+
+Create an empty file.
+
+🧾 Syntax
+
+```bash
+touch <file_name>
+```
+
+💡 Common Usage
+
+```bash
+touch report.txt
+touch notes.txt
+touch malware.sh
+```
+
+🛡️ SOC Use
+
+Create reports, notes and test files.
+
+⭐ Interview
+
+Creates an empty file if it doesn't already exist.
+
+---
+
+# CMD-010 | cp (Copy)
+
+📌 Purpose
+
+Copy files or directories.
+
+🧾 Syntax
+
+```bash
+cp <source> <destination>
+```
+
+💡 Common Usage
+
+```bash
+cp report.txt report_backup.txt
+cp notes.txt Reports/
+```
+
+🛡️ SOC Use
+
+Always copy evidence before analysis.
+
+⭐ Interview
+
+`cp` preserves the original.
+
+---
+
+# CMD-011 | mv (Move)
+
+📌 Purpose
+
+Move or rename files.
+
+🧾 Syntax
+
+```bash
+mv <source> <destination>
+```
+
+💡 Common Usage
+
+```bash
+mv notes.txt analyst_notes.txt
+mv analyst_notes.txt Reports/
+```
+
+🛡️ SOC Use
+
+Rename suspicious files and organize investigation data.
+
+⭐ Interview
+
+Used for both moving and renaming.
+
+---
+
+# CMD-012 | rm (Remove)
+
+📌 Purpose
+
+Delete files.
+
+🧾 Syntax
+
+```bash
+rm <file_name>
+```
+
+💡 Common Usage
+
+```bash
+rm notes.txt
+rm report.txt
+```
+
+🛡️ SOC Use
+
+Remove temporary files after confirming they are no longer needed.
+
+⭐ Interview
+
+Deletes permanently (no Recycle Bin).
+
+---
+
+# CMD-013 | rmdir (Remove Directory)
+
+📌 Purpose
+
+Delete an empty directory.
+
+🧾 Syntax
+
+```bash
+rmdir <directory_name>
+```
+
+💡 Common Usage
+
+```bash
+rmdir EmptyFolder
+```
+
+🛡️ SOC Use
+
+Clean up empty investigation folders.
+
+⭐ Interview
+
+Works only on empty directories.

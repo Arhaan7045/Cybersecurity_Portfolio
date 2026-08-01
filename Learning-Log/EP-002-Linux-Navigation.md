@@ -134,8 +134,4 @@ Navigation is one of the first practical Linux skills used in a SOC environment.
 
 ---
 
-# 🏆 XP Earned
-
-+150 XP
-
 Mission Complete ✅
