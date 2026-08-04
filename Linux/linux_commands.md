@@ -375,3 +375,150 @@ Clean up empty investigation folders.
 ⭐ Interview
 
 Works only on empty directories.
+
+---
+
+# CMD-014 | cat
+
+📌 Purpose
+
+Display the contents of a file.
+
+🧾 Syntax
+
+```bash
+cat <file>
+```
+
+💡 Common Usage
+
+```bash
+cat auth.log
+cat notes.txt
+```
+
+🛡️ SOC Use
+
+Quickly read configuration files and logs.
+
+⭐ Interview
+
+Displays the entire file at once.
+
+---
+
+# CMD-015 | less
+
+📌 Purpose
+
+View large files page by page.
+
+🧾 Syntax
+
+```bash
+less <file>
+```
+
+💡 Common Usage
+
+```bash
+less auth.log
+```
+
+🛡️ SOC Use
+
+Read large log files efficiently.
+
+⭐ Interview
+
+Press `q` to quit.
+
+---
+
+# CMD-016 | head
+
+📌 Purpose
+
+Display the first lines of a file.
+
+🧾 Syntax
+
+```bash
+head <file>
+head -n <file>
+```
+
+💡 Common Usage
+
+```bash
+head auth.log
+head -3 auth.log
+```
+
+🛡️ SOC Use
+
+Quickly inspect the beginning of logs.
+
+⭐ Interview
+
+Shows the first 10 lines by default.
+
+---
+
+# CMD-017 | tail
+
+📌 Purpose
+
+Display the last lines of a file.
+
+🧾 Syntax
+
+```bash
+tail <file>
+tail -n <file>
+```
+
+💡 Common Usage
+
+```bash
+tail auth.log
+tail -2 auth.log
+```
+
+🛡️ SOC Use
+
+Check the latest log entries during incident response.
+
+⭐ Interview
+
+Shows the last 10 lines by default.
+
+---
+
+# CMD-018 | grep
+
+📌 Purpose
+
+Search for text matching a pattern inside a file.
+
+🧾 Syntax
+
+```bash
+grep <pattern> <file>
+```
+
+💡 Common Usage
+
+```bash
+grep Failed auth.log
+grep Accepted auth.log
+grep admin auth.log
+```
+
+🛡️ SOC Use
+
+Search logs for failed logins, IP addresses, usernames, or error messages.
+
+⭐ Interview
+
+One of the most important Linux commands for SOC analysts.
