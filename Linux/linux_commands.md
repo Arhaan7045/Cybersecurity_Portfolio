@@ -522,3 +522,37 @@ Search logs for failed logins, IP addresses, usernames, or error messages.
 ⭐ Interview
 
 One of the most important Linux commands for SOC analysts.
+
+---
+
+# CMD-019 | ls -l (Deep Dive)
+
+📌 Purpose
+
+Display detailed information about files, including permissions, owner, group, size, and last modified date.
+
+🧾 Syntax
+
+```bash
+ls -l
+```
+
+💡 Common Usage
+
+```bash
+ls -l
+ls -l Documents
+ls -l /var/log
+```
+
+🛡️ SOC Use
+
+Check file permissions, ownership, and identify files that may be overly permissive or suspicious.
+
+⭐ Interview
+
+Be able to explain each part of a permission string such as:
+
+```text
+-rw-r--r--
+```
