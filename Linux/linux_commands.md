@@ -556,3 +556,92 @@ Be able to explain each part of a permission string such as:
 ```text
 -rw-r--r--
 ```
+
+---
+
+# CMD-020 | chmod (Change Mode)
+
+📌 Purpose
+
+Change file or directory permissions.
+
+🧾 Syntax
+
+```bash
+chmod <permissions> <file>
+```
+
+💡 Common Usage
+
+```bash
+chmod 755 backup.sh
+chmod 644 report.txt
+chmod +x script.sh
+chmod u+x script.sh
+chmod g-w script.sh
+chmod o-x script.sh
+```
+
+🛡️ SOC Use
+
+Secure files by applying the principle of least privilege and preventing unauthorized modification or execution.
+
+⭐ Interview
+
+Know the difference between numeric (755) and symbolic (u+x) permissions.
+
+---
+
+# CMD-021 | chown (Change Owner)
+
+📌 Purpose
+
+Change the owner of a file or directory.
+
+🧾 Syntax
+
+```bash
+sudo chown <owner> <file>
+```
+
+💡 Common Usage
+
+```bash
+sudo chown root backup.sh
+```
+
+🛡️ SOC Use
+
+Transfer ownership of sensitive files to the correct user.
+
+⭐ Interview
+
+Changes the file owner.
+
+---
+
+# CMD-022 | chgrp (Change Group)
+
+📌 Purpose
+
+Change the group ownership of a file or directory.
+
+🧾 Syntax
+
+```bash
+sudo chgrp <group> <file>
+```
+
+💡 Common Usage
+
+```bash
+sudo chgrp developers backup.sh
+```
+
+🛡️ SOC Use
+
+Grant access to the appropriate team without changing the file owner.
+
+⭐ Interview
+
+Changes only the group ownership.
