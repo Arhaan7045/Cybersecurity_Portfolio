@@ -645,3 +645,121 @@ Grant access to the appropriate team without changing the file owner.
 ⭐ Interview
 
 Changes only the group ownership.
+
+---
+
+# CMD-023 | whoami
+
+📌 Purpose
+
+Display the current logged-in username.
+
+🧾 Syntax
+
+```bash
+whoami
+```
+
+🛡️ SOC Use
+
+Verify which account is currently being used before performing administrative actions.
+
+⭐ Interview
+
+Shows only the username.
+
+---
+
+# CMD-024 | id
+
+📌 Purpose
+
+Display user ID (UID), group ID (GID), and group memberships.
+
+🧾 Syntax
+
+```bash
+id
+```
+
+🛡️ SOC Use
+
+Verify user identity and privileges during investigations.
+
+⭐ Interview
+
+Provides more information than `whoami`.
+
+---
+
+# CMD-025 | groups
+
+📌 Purpose
+
+Display all groups the current user belongs to.
+
+🧾 Syntax
+
+```bash
+groups
+```
+
+🛡️ SOC Use
+
+Check group memberships when troubleshooting permission issues.
+
+⭐ Interview
+
+Useful for understanding access rights.
+
+---
+
+# CMD-026 | who
+
+📌 Purpose
+
+Display users currently logged into the system.
+
+🧾 Syntax
+
+```bash
+who
+```
+
+🛡️ SOC Use
+
+Identify active user sessions during investigations.
+
+⭐ Interview
+
+May show no output on a personal desktop session, depending on how you're logged in.
+
+---
+
+# CMD-027 | sudo
+
+📌 Purpose
+
+Run a command with administrative (root) privileges.
+
+🧾 Syntax
+
+```bash
+sudo <command>
+```
+
+💡 Common Usage
+
+```bash
+sudo apt update
+sudo apt upgrade
+sudo ls /root
+```
+
+🛡️ SOC Use
+
+Perform administrative tasks while following the principle of least privilege.
+
+⭐ Interview
+
+Temporarily elevates privileges for a single command.
