@@ -763,3 +763,156 @@ Perform administrative tasks while following the principle of least privilege.
 ⭐ Interview
 
 Temporarily elevates privileges for a single command.
+
+---
+
+# CMD-028 | ps
+
+📌 Purpose
+
+Display currently running processes.
+
+🧾 Syntax
+
+```bash
+ps
+```
+
+💡 Common Usage
+
+```bash
+ps
+```
+
+🛡️ SOC Use
+
+Quickly inspect processes running in the current session.
+
+⭐ Interview
+
+Provides a snapshot of processes.
+
+---
+
+# CMD-029 | ps aux
+
+📌 Purpose
+
+Display detailed information about running processes.
+
+🧾 Syntax
+
+```bash
+ps aux
+```
+
+💡 Important Columns
+
+- USER
+- PID
+- %CPU
+- %MEM
+- STAT
+- COMMAND
+
+🛡️ SOC Use
+
+Investigate processes, their owners, and resource usage.
+
+⭐ Interview
+
+Know what USER, PID, %CPU and COMMAND represent.
+
+---
+
+# CMD-030 | top
+
+📌 Purpose
+
+Display a continuously updating view of running processes and system resource usage.
+
+🧾 Syntax
+
+```bash
+top
+```
+
+💡 Common Usage
+
+```bash
+top
+```
+
+Press:
+
+```text
+q
+```
+
+to exit.
+
+🛡️ SOC Use
+
+Monitor CPU and memory usage and identify processes consuming unusual resources.
+
+⭐ Interview
+
+`ps` is a snapshot; `top` is a live view.
+
+---
+
+# CMD-031 | kill
+
+📌 Purpose
+
+Send a signal to a process.
+
+🧾 Syntax
+
+```bash
+kill <PID>
+```
+
+💡 Common Usage
+
+```bash
+kill 4210
+```
+
+🛡️ SOC Use
+
+Terminate a process when appropriate during system administration or incident response.
+
+⭐ Interview
+
+The default signal is SIGTERM (15), which requests graceful termination.
+
+---
+
+# CMD-032 | killall
+
+📌 Purpose
+
+Send a signal to processes matching a name.
+
+🧾 Syntax
+
+```bash
+killall <process_name>
+```
+
+💡 Example
+
+```bash
+killall firefox
+```
+
+🛡️ SOC Use
+
+Can terminate multiple processes with the same name.
+
+⚠️ Use carefully because multiple processes may be affected.
+
+⭐ Interview
+
+`kill` normally targets a PID; `killall` targets processes by name.
