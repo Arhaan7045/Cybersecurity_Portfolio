@@ -916,3 +916,119 @@ Can terminate multiple processes with the same name.
 ⭐ Interview
 
 `kill` normally targets a PID; `killall` targets processes by name.
+
+---
+
+# CMD-033 | systemctl status
+
+📌 Purpose
+
+Check the current status of a system service.
+
+🧾 Example
+
+```bash
+systemctl status ssh
+```
+
+🛡️ SOC Use
+
+Investigate whether a service is running and inspect basic service information.
+
+---
+
+# CMD-034 | systemctl list-units
+
+📌 Purpose
+
+List currently loaded service units.
+
+🧾 Example
+
+```bash
+systemctl list-units --type=service
+```
+
+🛡️ SOC Use
+
+Review services currently managed by systemd.
+
+---
+
+# CMD-035 | systemctl start
+
+📌 Purpose
+
+Start a service immediately.
+
+🧾 Example
+
+```bash
+sudo systemctl start ssh
+```
+
+---
+
+# CMD-036 | systemctl stop
+
+📌 Purpose
+
+Stop a service immediately.
+
+🧾 Example
+
+```bash
+sudo systemctl stop <service>
+```
+
+⚠️ Use carefully because stopping critical services can affect the system.
+
+---
+
+# CMD-037 | systemctl restart
+
+📌 Purpose
+
+Restart a service.
+
+🧾 Example
+
+```bash
+sudo systemctl restart <service>
+```
+
+🛡️ SOC Use
+
+Restart services after configuration changes when appropriate.
+
+---
+
+# CMD-038 | systemctl enable
+
+📌 Purpose
+
+Configure a service to start automatically during system boot.
+
+🧾 Example
+
+```bash
+sudo systemctl enable ssh
+```
+
+---
+
+# CMD-039 | systemctl disable
+
+📌 Purpose
+
+Prevent a service from automatically starting during system boot.
+
+🧾 Example
+
+```bash
+sudo systemctl disable <service>
+```
+
+🛡️ SOC Use
+
+Can be used when safely removing unwanted persistence or disabling unnecessary services.
