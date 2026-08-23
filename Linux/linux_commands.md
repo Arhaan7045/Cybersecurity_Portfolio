@@ -1032,3 +1032,135 @@ sudo systemctl disable <service>
 🛡️ SOC Use
 
 Can be used when safely removing unwanted persistence or disabling unnecessary services.
+
+---
+
+# CMD-040 | journalctl
+
+📌 Purpose
+
+Read logs collected by the systemd journal.
+
+🧾 Example
+
+```bash
+journalctl
+```
+
+🛡️ SOC Use
+
+Review system events during investigations.
+
+---
+
+# CMD-041 | journalctl -n
+
+📌 Purpose
+
+Show the most recent journal entries.
+
+🧾 Example
+
+```bash
+journalctl -n 20
+```
+
+🛡️ SOC Use
+
+Quickly review recent system activity.
+
+---
+
+# CMD-042 | journalctl -b
+
+📌 Purpose
+
+Show journal entries from the current system boot.
+
+🧾 Example
+
+```bash
+journalctl -b
+```
+
+🛡️ SOC Use
+
+Investigate events that occurred since the system started.
+
+---
+
+# CMD-043 | journalctl -u
+
+📌 Purpose
+
+Show logs for a specific systemd service.
+
+🧾 Example
+
+```bash
+journalctl -u ssh
+```
+
+🛡️ SOC Use
+
+Investigate activity and errors related to a specific service.
+
+---
+
+# CMD-044 | tail
+
+📌 Purpose
+
+Display the end of a text file.
+
+🧾 Example
+
+```bash
+tail -n 20 /var/log/syslog
+```
+
+🛡️ SOC Use
+
+Quickly inspect recent entries in a log file.
+
+---
+
+# CMD-045 | less
+
+📌 Purpose
+
+View large text files one screen at a time.
+
+🧾 Example
+
+```bash
+less /var/log/syslog
+```
+
+🛡️ SOC Use
+
+Safely examine large log files without dumping everything onto the terminal.
+
+Press `q` to exit.
+
+---
+
+# CMD-046 | grep
+
+📌 Purpose
+
+Search text for a specific pattern.
+
+🧾 Example
+
+```bash
+grep "Failed" /var/log/auth.log
+```
+
+🛡️ SOC Use
+
+Find specific events or keywords inside logs.
+
+⭐ Interview
+
+Very useful for filtering large amounts of log data.
