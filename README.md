@@ -8,7 +8,7 @@
 - [x] EP-004 Viewing & Searching Files
 - [x] EP-005 Permissions (Understanding)
 - [x] EP-006 Permissions (Management)
-- [ ] EP-007 Users & Groups
-- [ ] EP-008 Processes
-- [ ] EP-009 Services
-...
+- [x] EP-007 Users & Groups
+- [x] EP-008 Processes
+- [x] EP-009 Services
+- [x] EP-010 Linux Logs & Journalctl
