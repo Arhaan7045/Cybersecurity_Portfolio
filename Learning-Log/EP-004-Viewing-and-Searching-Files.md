@@ -10,13 +10,11 @@
 
 ---
 
-# 🎮 Mission
+## Mission
 
 Investigated authentication logs from Falcon Technologies to identify suspicious login attempts.
 
----
-
-# Commands Learned
+## Commands Learned
 
 - cat
 - less
@@ -24,45 +22,33 @@ Investigated authentication logs from Falcon Technologies to identify suspicious
 - tail
 - grep
 
----
-
-# Key Concepts
+## Key Concepts
 
 - Viewing files
 - Reading large log files
 - Searching log entries
 - Identifying failed and successful logins
 
----
-
-# Practical Lab
+## Practical Lab
 
 Created a sample `auth.log` file and analyzed it using Linux commands.
 
----
-
-# SOC Perspective
+## SOC Perspective
 
 Security analysts spend a significant amount of time reviewing logs. Efficiently reading and filtering logs is a fundamental skill for incident response and threat hunting.
 
----
-
-# Biggest Takeaway
+## Biggest Takeaway
 
 `grep` is one of the most powerful commands for quickly finding relevant information in large log files.
 
----
+## Interview Questions
 
-# Interview Questions
+- What is the difference between `cat` and `less`?
+- Why is `tail` commonly used with log files?
+- What does `grep` do?
+- Which command would you use to find failed login attempts?
+- When would you use `head`?
 
-1. What is the difference between `cat` and `less`?
-2. Why is `tail` commonly used with log files?
-3. What does `grep` do?
-4. Which command would you use to find failed login attempts?
-5. When would you use `head`?
-
----
-
-# Next Episode
+## Next Episode
 
 Linux Permissions

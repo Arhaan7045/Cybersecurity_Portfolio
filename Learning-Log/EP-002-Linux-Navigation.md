@@ -12,33 +12,21 @@
 
 ---
 
-# 🎮 Mission
+## Mission
 
-## CASE #002 - The Missing Evidence
+Learned how to navigate the Linux file system using the terminal and reach important locations such as `/var/log`.
 
-A security alert reports multiple failed SSH login attempts.
+## Commands Learned
 
-Your senior analyst tells you that the evidence is stored inside:
+- pwd
+- ls
+- ls -l
+- cd
+- cd ..
+- cd ~
+- cd /
 
-```text
-/var/log/auth.log
-```
-
-Your task is to reach that location using only terminal commands.
-
-No mouse.
-
-No graphical interface.
-
----
-
-# 🎯 Objective
-
-Learn how to navigate the Linux file system using the terminal.
-
----
-
-# 🧠 Key Concepts Learned
+## Key Concepts
 
 - Current Working Directory
 - Change Directory (`cd`)
@@ -49,89 +37,33 @@ Learn how to navigate the Linux file system using the terminal.
 - Absolute Path
 - Relative Path
 
----
+## Biggest Takeaway
 
-# 💻 Commands Learned
+Linux navigation is about understanding where you are and how to move between directories using paths.
 
-- pwd
-- ls
-- ls -l
-- cd
-- cd ..
-- cd ~
-- cd /
+## SOC Perspective
 
-> Detailed explanations are available in `Linux/linux_commands.md`.
+Linux servers are often managed through the terminal. Security analysts need to quickly navigate between log files, user directories, and configuration files during investigations.
 
----
+## Interview Questions
 
-# 🧪 Practical Lab
+- What does `cd` do?
+- What is an absolute path?
+- What is a relative path?
+- What does `~` represent?
+- What does `..` represent?
+- What is the root directory?
 
-```bash
-pwd
+## Things to Remember
 
-cd Documents
-
-pwd
-
-cd ..
-
-pwd
-
-cd /
-
-pwd
-
-cd ~
-
-pwd
-
-cd /var/log
-
-pwd
-```
-
----
-
-# 📸 Screenshot Checklist
-
-- Terminal showing `/var/log`
-- Terminal showing `cd ~`
-- Optional screen recording of the navigation commands
-
----
-
-# 🛡️ SOC Perspective
-
-Linux servers are often managed without a graphical interface.
-
-Security analysts need to navigate quickly between log files, user directories, and configuration files during investigations.
-
-Navigation is one of the first practical Linux skills used in a SOC environment.
-
----
-
-# ⭐ Interview Questions
-
-1. What does `cd` do?
-2. What is an absolute path?
-3. What is a relative path?
-4. What does `~` represent?
-5. What does `..` represent?
-6. What is the root directory?
-
----
-
-# 🧠 Things Recruiters Expect You to Remember
-
-- `cd` changes directories.
 - `pwd` shows your current location.
+- `cd` changes directories.
 - `/` is the root directory.
 - `~` is your home directory.
 - `..` moves to the parent directory.
 - Absolute paths begin with `/`.
 - Relative paths begin from your current location.
 
----
+## Next Episode
 
-Mission Complete ✅
+Linux File & Directory Management

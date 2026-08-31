@@ -12,35 +12,11 @@
 
 ---
 
-# 🎮 Mission
+## Mission
 
-## CASE #003 - The Shadow File
+Investigated how to safely create, copy, rename, move, and remove files and directories without modifying original evidence.
 
-Falcon Technologies detected suspicious file activity on a Linux server.
-
-Before investigating the suspicious file, I learned how to safely create, copy, rename, move and remove files without touching production evidence.
-
----
-
-# 🎯 Objective
-
-Learn the most common Linux file and directory operations used by Linux administrators and SOC analysts.
-
----
-
-# 🧠 Key Concepts Learned
-
-- Creating directories
-- Creating files
-- Copying files
-- Moving files
-- Renaming files
-- Deleting files
-- Deleting empty directories
-
----
-
-# 💻 Commands Learned
+## Commands Learned
 
 - mkdir
 - touch
@@ -49,65 +25,41 @@ Learn the most common Linux file and directory operations used by Linux administ
 - rm
 - rmdir
 
-> Detailed command reference is available in `Linux/linux_commands.md`.
+## Key Concepts
 
----
+- Creating directories
+- Creating files
+- Copying files
+- Moving files
+- Renaming files
+- Deleting files
+- Deleting empty directories
+- Evidence preservation
 
-# 🧪 Practical Lab
+## Biggest Takeaway
 
-Completed the following tasks:
+Good file management is essential during security investigations. Analysts should preserve original evidence and perform analysis on copies whenever possible.
 
-- Created investigation folders
-- Created suspicious files
-- Copied evidence
-- Renamed files
-- Moved reports
-- Deleted copied evidence
-- Removed empty folders
+## SOC Perspective
 
----
+During incident response, analysts need to organize investigation files while protecting evidence.
 
-# 🛡️ SOC Perspective
-
-During an incident response, analysts rarely work on the original evidence.
-
-Instead, they:
+A common approach is:
 
 - Preserve the original file.
 - Create a copy.
-- Perform analysis on the copy.
+- Analyze the copy.
 - Keep investigation folders organized.
 
-Good file management reduces mistakes and protects evidence.
+## Interview Questions
 
----
+- What is the difference between `mkdir` and `touch`?
+- What is the difference between `cp` and `mv`?
+- Why is `rm` considered dangerous?
+- What is the purpose of `rmdir`?
+- Why should analysts avoid modifying original evidence?
 
-# ⭐ Interview Questions
-
-### 1. What is the difference between `mkdir` and `touch`?
-
-### 2. What is the difference between `cp` and `mv`?
-
-### 3. Why is `rm` considered dangerous?
-
-### 4. What is the purpose of `rmdir`?
-
-### 5. Why should analysts avoid modifying original evidence?
-
----
-
-# 📸 Screenshots
-
-- Investigation folders created
-- Files created
-- Files copied
-- Files renamed
-- Reports directory
-- Successful mini mission
-
----
-
-# 🧠 Things Recruiters Expect You To Remember
+## Things to Remember
 
 - `mkdir` creates directories.
 - `touch` creates empty files.
@@ -117,32 +69,18 @@ Good file management reduces mistakes and protects evidence.
 - `rmdir` deletes only empty directories.
 - Never analyze original evidence directly.
 
----
-
-# Biggest Challenge
+## Biggest Challenge
 
 Remembering when to use `cp` versus `mv`.
 
----
-
-# Biggest Takeaway
-
-Good file management is essential during security investigations because preserving evidence is just as important as finding it.
-
----
-
-# Next Episode
+## Next Episode
 
 Viewing and Searching Files
 
-Commands:
+**Commands:**
 
 - cat
 - less
 - head
 - tail
 - grep
-
-Mission:
-
-Investigate a suspicious authentication log.

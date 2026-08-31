@@ -411,27 +411,19 @@ Displays the entire file at once.
 
 📌 Purpose
 
-View large files page by page.
+View large text files one screen at a time.
 
-🧾 Syntax
-
-```bash
-less <file>
-```
-
-💡 Common Usage
+🧾 Example
 
 ```bash
-less auth.log
+less /var/log/syslog
 ```
 
 🛡️ SOC Use
 
-Read large log files efficiently.
+Safely examine large log files without dumping everything onto the terminal.
 
-⭐ Interview
-
-Press `q` to quit.
+Press `q` to exit.
 
 ---
 
@@ -469,29 +461,17 @@ Shows the first 10 lines by default.
 
 📌 Purpose
 
-Display the last lines of a file.
+Display the end of a text file.
 
-🧾 Syntax
-
-```bash
-tail <file>
-tail -n <file>
-```
-
-💡 Common Usage
+🧾 Example
 
 ```bash
-tail auth.log
-tail -2 auth.log
+tail -n 20 /var/log/syslog
 ```
 
 🛡️ SOC Use
 
-Check the latest log entries during incident response.
-
-⭐ Interview
-
-Shows the last 10 lines by default.
+Quickly inspect recent entries in a log file.
 
 ---
 
@@ -499,67 +479,23 @@ Shows the last 10 lines by default.
 
 📌 Purpose
 
-Search for text matching a pattern inside a file.
+Search text for a specific pattern.
 
-🧾 Syntax
-
-```bash
-grep <pattern> <file>
-```
-
-💡 Common Usage
+🧾 Example
 
 ```bash
-grep Failed auth.log
-grep Accepted auth.log
-grep admin auth.log
+grep "Failed" /var/log/auth.log
 ```
 
 🛡️ SOC Use
 
-Search logs for failed logins, IP addresses, usernames, or error messages.
+Find specific events or keywords inside logs.
 
 ⭐ Interview
 
-One of the most important Linux commands for SOC analysts.
+Very useful for filtering large amounts of log data.
 
----
-
-# CMD-019 | ls -l (Deep Dive)
-
-📌 Purpose
-
-Display detailed information about files, including permissions, owner, group, size, and last modified date.
-
-🧾 Syntax
-
-```bash
-ls -l
-```
-
-💡 Common Usage
-
-```bash
-ls -l
-ls -l Documents
-ls -l /var/log
-```
-
-🛡️ SOC Use
-
-Check file permissions, ownership, and identify files that may be overly permissive or suspicious.
-
-⭐ Interview
-
-Be able to explain each part of a permission string such as:
-
-```text
--rw-r--r--
-```
-
----
-
-# CMD-020 | chmod (Change Mode)
+# CMD-019 | chmod (Change Mode)
 
 📌 Purpose
 
@@ -592,7 +528,7 @@ Know the difference between numeric (755) and symbolic (u+x) permissions.
 
 ---
 
-# CMD-021 | chown (Change Owner)
+# CMD-020 | chown (Change Owner)
 
 📌 Purpose
 
@@ -620,7 +556,7 @@ Changes the file owner.
 
 ---
 
-# CMD-022 | chgrp (Change Group)
+# CMD-021 | chgrp (Change Group)
 
 📌 Purpose
 
@@ -648,7 +584,7 @@ Changes only the group ownership.
 
 ---
 
-# CMD-023 | whoami
+# CMD-022 | whoami
 
 📌 Purpose
 
@@ -670,7 +606,7 @@ Shows only the username.
 
 ---
 
-# CMD-024 | id
+# CMD-023 | id
 
 📌 Purpose
 
@@ -692,7 +628,7 @@ Provides more information than `whoami`.
 
 ---
 
-# CMD-025 | groups
+# CMD-024 | groups
 
 📌 Purpose
 
@@ -714,7 +650,7 @@ Useful for understanding access rights.
 
 ---
 
-# CMD-026 | who
+# CMD-025 | who
 
 📌 Purpose
 
@@ -736,7 +672,7 @@ May show no output on a personal desktop session, depending on how you're logged
 
 ---
 
-# CMD-027 | sudo
+# CMD-026 | sudo
 
 📌 Purpose
 
@@ -766,7 +702,7 @@ Temporarily elevates privileges for a single command.
 
 ---
 
-# CMD-028 | ps
+# CMD-027 | ps
 
 📌 Purpose
 
@@ -794,7 +730,7 @@ Provides a snapshot of processes.
 
 ---
 
-# CMD-029 | ps aux
+# CMD-028 | ps aux
 
 📌 Purpose
 
@@ -825,7 +761,7 @@ Know what USER, PID, %CPU and COMMAND represent.
 
 ---
 
-# CMD-030 | top
+# CMD-029 | top
 
 📌 Purpose
 
@@ -861,7 +797,7 @@ Monitor CPU and memory usage and identify processes consuming unusual resources.
 
 ---
 
-# CMD-031 | kill
+# CMD-030 | kill
 
 📌 Purpose
 
@@ -889,7 +825,7 @@ The default signal is SIGTERM (15), which requests graceful termination.
 
 ---
 
-# CMD-032 | killall
+# CMD-031 | killall
 
 📌 Purpose
 
@@ -919,7 +855,7 @@ Can terminate multiple processes with the same name.
 
 ---
 
-# CMD-033 | systemctl status
+# CMD-032 | systemctl status
 
 📌 Purpose
 
@@ -937,7 +873,7 @@ Investigate whether a service is running and inspect basic service information.
 
 ---
 
-# CMD-034 | systemctl list-units
+# CMD-033 | systemctl list-units
 
 📌 Purpose
 
@@ -955,7 +891,7 @@ Review services currently managed by systemd.
 
 ---
 
-# CMD-035 | systemctl start
+# CMD-034 | systemctl start
 
 📌 Purpose
 
@@ -969,7 +905,7 @@ sudo systemctl start ssh
 
 ---
 
-# CMD-036 | systemctl stop
+# CMD-035 | systemctl stop
 
 📌 Purpose
 
@@ -985,7 +921,7 @@ sudo systemctl stop <service>
 
 ---
 
-# CMD-037 | systemctl restart
+# CMD-036 | systemctl restart
 
 📌 Purpose
 
@@ -1003,7 +939,7 @@ Restart services after configuration changes when appropriate.
 
 ---
 
-# CMD-038 | systemctl enable
+# CMD-037 | systemctl enable
 
 📌 Purpose
 
@@ -1017,7 +953,7 @@ sudo systemctl enable ssh
 
 ---
 
-# CMD-039 | systemctl disable
+# CMD-038 | systemctl disable
 
 📌 Purpose
 
@@ -1035,7 +971,7 @@ Can be used when safely removing unwanted persistence or disabling unnecessary s
 
 ---
 
-# CMD-040 | journalctl
+# CMD-039 | journalctl
 
 📌 Purpose
 
@@ -1053,7 +989,7 @@ Review system events during investigations.
 
 ---
 
-# CMD-041 | journalctl -n
+# CMD-040 | journalctl -n
 
 📌 Purpose
 
@@ -1071,7 +1007,7 @@ Quickly review recent system activity.
 
 ---
 
-# CMD-042 | journalctl -b
+# CMD-041 | journalctl -b
 
 📌 Purpose
 
@@ -1089,7 +1025,7 @@ Investigate events that occurred since the system started.
 
 ---
 
-# CMD-043 | journalctl -u
+# CMD-042 | journalctl -u
 
 📌 Purpose
 
@@ -1106,61 +1042,3 @@ journalctl -u ssh
 Investigate activity and errors related to a specific service.
 
 ---
-
-# CMD-044 | tail
-
-📌 Purpose
-
-Display the end of a text file.
-
-🧾 Example
-
-```bash
-tail -n 20 /var/log/syslog
-```
-
-🛡️ SOC Use
-
-Quickly inspect recent entries in a log file.
-
----
-
-# CMD-045 | less
-
-📌 Purpose
-
-View large text files one screen at a time.
-
-🧾 Example
-
-```bash
-less /var/log/syslog
-```
-
-🛡️ SOC Use
-
-Safely examine large log files without dumping everything onto the terminal.
-
-Press `q` to exit.
-
----
-
-# CMD-046 | grep
-
-📌 Purpose
-
-Search text for a specific pattern.
-
-🧾 Example
-
-```bash
-grep "Failed" /var/log/auth.log
-```
-
-🛡️ SOC Use
-
-Find specific events or keywords inside logs.
-
-⭐ Interview
-
-Very useful for filtering large amounts of log data.
