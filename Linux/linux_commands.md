@@ -1042,3 +1042,165 @@ journalctl -u ssh
 Investigate activity and errors related to a specific service.
 
 ---
+
+# CMD-043 | hostname -I
+
+**Purpose**
+
+Display IP addresses assigned to the machine.
+
+**Syntax**
+```bash
+hostname -I
+```
+
+**SOC Use**
+
+Quickly identify network addresses assigned to the system.
+
+---
+
+# CMD-044 | ip addr
+
+**Purpose**
+
+Display network interfaces and their assigned IP addresses.
+
+**Syntax**
+```bash
+ip addr
+```
+
+**SOC Use**
+
+Inspect network configuration and interface status.
+
+---
+
+# CMD-045 | ip route
+
+**Purpose**
+
+Display the Linux routing table.
+
+**Syntax**
+```bash
+ip route
+```
+
+**SOC Use**
+
+Identify the default gateway and routes used by the system.
+
+---
+
+# CMD-046 | ping
+
+**Purpose**
+
+Test network connectivity using ICMP Echo Requests.
+
+**Syntax**
+```bash
+ping -c 4 1.1.1.1
+```
+
+**SOC Use**
+
+Perform basic connectivity checks.
+
+**Important**
+
+A failed ping does not necessarily mean a destination is offline.
+
+---
+
+# CMD-047 | getent hosts
+
+**Purpose**
+
+Resolve a hostname using the system's configured name-resolution mechanism.
+
+**Syntax**
+```bash
+getent hosts example.com
+```
+
+**SOC Use**
+
+Check how the operating system resolves domain names.
+
+---
+
+# CMD-048 | nslookup
+
+**Purpose**
+
+Query DNS records and inspect resolver responses.
+
+**Syntax**
+```bash
+nslookup example.com
+```
+
+**SOC Use**
+
+Investigate domain-name resolution.
+
+---
+
+# CMD-049 | dig
+
+**Purpose**
+
+Query DNS servers and inspect DNS responses.
+
+**Syntax**
+```bash
+dig example.com
+dig A example.com +short
+```
+
+**SOC Use**
+
+Investigate DNS records and potentially suspicious domain resolution.
+
+---
+
+# CMD-050 | ss
+
+**Purpose**
+
+Display socket information, including listening TCP and UDP sockets.
+
+**Syntax**
+```bash
+ss -tuln
+sudo ss -tulpn
+```
+
+**SOC Use**
+
+Identify listening ports and, when available, associated processes.
+
+---
+
+# CMD-051 | curl
+
+**Purpose**
+
+Transfer data to or from servers using supported protocols such as HTTP and HTTPS.
+
+**Syntax**
+```bash
+curl -I https://example.com
+curl -I --max-time 10 https://example.com
+```
+
+**SOC Use**
+
+Inspect HTTP response headers and test web-server communication.
+
+**Important**
+
+-I makes a HEAD request to retrieve response headers.
