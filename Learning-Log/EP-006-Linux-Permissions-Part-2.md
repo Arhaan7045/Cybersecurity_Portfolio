@@ -1,34 +1,16 @@
-# EP-006 - Linux Permissions (Part 2)
+EP-006
 
-## Mission
+*Date:* Not recorded
+*Topic:* Linux Permissions — Part 2
 
-Investigated an insecure Linux script that had world-writable permissions and secured it using chmod.
+*Topics learned:*
+- Changing file and directory permissions.
+- Numeric and symbolic permission modes.
+- Understanding common permission values such as 755, 700, 644 and 600.
+- Changing file ownership and group ownership.
+- Applying the Principle of Least Privilege.
+- **Linux commands learned:** `chmod`, `chown`, `chgrp`.
 
-## Commands Learned
+*Cybersecurity lesson:* Incorrect permissions can allow unauthorised users to read, modify or execute sensitive files. Apply the least privilege principle and avoid unnecessarily permissive settings such as 777.
 
-- chmod
-- chown
-- chgrp
-
-## Key Concepts
-
-- Numeric permissions
-- Symbolic permissions
-- Least Privilege Principle
-- File ownership
-- Group ownership
-
-## Biggest Takeaway
-
-File permissions are one of the first layers of defense in Linux. Poor permissions can allow attackers or unauthorized users to modify or execute sensitive files.
-
-## Interview Questions
-
-- What does chmod 755 mean?
-- Why should 777 be avoided?
-- What is the difference between chmod, chown and chgrp?
-- What is the Least Privilege Principle?
-
-## Next Episode
-
-Users, Groups & Identity
+*Key takeaway:* Give users only the access they need, and verify permission and ownership changes carefully.

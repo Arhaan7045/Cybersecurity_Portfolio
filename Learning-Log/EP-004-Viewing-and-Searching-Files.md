@@ -1,54 +1,16 @@
-# EP-004 - Viewing and Searching Files
+EP-004
 
-**Series:** From Beginner to SOC Analyst
+*Date:* Not recorded
+*Topic:* Viewing and Searching Files
 
-**Phase:** Linux Fundamentals
+*Topics learned:*
+- Viewing the contents of text files.
+- Reading large files one screen at a time.
+- Displaying the beginning and end of files.
+- Searching file contents for relevant terms.
+- Reviewing authentication logs for login activity.
+- **Linux commands learned:** `cat`, `less`, `head`, `tail`, `grep`.
 
-**Episode:** 004
+*Cybersecurity lesson:* Log review is a core investigation skill. Analysts use commands such as `grep` to filter relevant events, then examine surrounding context instead of treating one log entry as proof of an attack.
 
-**Status:** ✅ Completed
-
----
-
-## Mission
-
-Investigated authentication logs from Falcon Technologies to identify suspicious login attempts.
-
-## Commands Learned
-
-- cat
-- less
-- head
-- tail
-- grep
-
-## Key Concepts
-
-- Viewing files
-- Reading large log files
-- Searching log entries
-- Identifying failed and successful logins
-
-## Practical Lab
-
-Created a sample `auth.log` file and analyzed it using Linux commands.
-
-## SOC Perspective
-
-Security analysts spend a significant amount of time reviewing logs. Efficiently reading and filtering logs is a fundamental skill for incident response and threat hunting.
-
-## Biggest Takeaway
-
-`grep` is one of the most powerful commands for quickly finding relevant information in large log files.
-
-## Interview Questions
-
-- What is the difference between `cat` and `less`?
-- Why is `tail` commonly used with log files?
-- What does `grep` do?
-- Which command would you use to find failed login attempts?
-- When would you use `head`?
-
-## Next Episode
-
-Linux Permissions
+*Key takeaway:* Use the right viewing or searching command to find relevant information without losing the context of the log.

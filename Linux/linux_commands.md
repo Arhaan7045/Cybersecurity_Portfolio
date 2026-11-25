@@ -1,825 +1,533 @@
 # Linux Commands
 
-> A practical command reference for my cybersecurity journey.
->
-> **Series:** From Beginner to SOC Analyst
+A practical reference for Linux commands covered in the cybersecurity learning episodes.
 
 ---
 
-# CMD-001 | pwd (Print Working Directory)
+# CMD-001 | pwd
 
-📌 Purpose
+**Purpose**
 
-Shows the current directory you're working in.
+Display the current working directory.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 pwd
 ```
 
-💡 Example
+**SOC Use**
 
-```bash
-pwd
-```
-
-Output
-
-```text
-/home/arhaan
-```
-
-🛡️ SOC Use
-
-Always verify your location before viewing, modifying, or collecting evidence.
-
-⭐ Interview
-
-Used to display the current working directory.
+Verify the current location before viewing, modifying or collecting files.
 
 ---
 
-# CMD-002 | ls (List)
+# CMD-002 | ls
 
-📌 Purpose
+**Purpose**
 
-Lists files and directories.
+List files and directories.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 ls
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-ls
-ls Downloads
-ls Desktop
-```
-
-🛡️ SOC Use
-
-Used to discover files and folders during investigations.
-
-⭐ Interview
-
-`ls` shows names only.
+Discover files and directories during system inspection.
 
 ---
 
-# CMD-003 | ls -l (Long Listing)
+# CMD-003 | ls -l
 
-📌 Purpose
+**Purpose**
 
-Shows detailed information about files and directories.
+Display detailed file and directory information, including permissions, owner, group, size and modification time.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 ls -l
 ```
 
-💡 Displays
+**SOC Use**
 
-- Permissions
-- Owner
-- Group
-- Size
-- Date
-- Filename
-
-🛡️ SOC Use
-
-Useful when checking file permissions or ownership.
-
-⭐ Interview
-
-Know what each column represents.
+Inspect permissions and ownership during file-access investigations.
 
 ---
 
-# CMD-004 | cd (Change Directory)
+# CMD-004 | cd
 
-📌 Purpose
+**Purpose**
 
-Move to another directory.
+Change the current directory.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 cd <directory>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-cd Documents
-cd Downloads
-cd /var/log
-```
-
-🛡️ SOC Use
-
-Navigate to logs, configuration files, and evidence locations.
-
-⭐ Interview
-
-Know the difference between absolute and relative paths.
+Navigate to log locations, configuration directories and evidence folders.
 
 ---
 
 # CMD-005 | cd ..
 
-📌 Purpose
+**Purpose**
 
 Move to the parent directory.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 cd ..
 ```
 
-💡 Example
+**SOC Use**
 
-```bash
-cd ..
-```
-
-🛡️ SOC Use
-
-Quickly move up one directory while investigating.
-
-⭐ Interview
-
-`..` always means the parent directory.
+Move between directory levels while navigating an investigation workspace.
 
 ---
 
 # CMD-006 | cd ~
 
-📌 Purpose
+**Purpose**
 
-Return to the home directory.
+Move to the current user's home directory.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 cd ~
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Quickly return to your user workspace.
-
-⭐ Interview
-
-`~` represents the current user's home directory.
+Return to the analyst's home workspace.
 
 ---
 
 # CMD-007 | cd /
 
-📌 Purpose
+**Purpose**
 
-Move to the root directory.
+Move to the filesystem root directory.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 cd /
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Start navigating from the top of the Linux file system.
-
-⭐ Interview
-
-`/` is the root directory, not the home directory.
+Begin navigation from the top level of the Linux filesystem.
 
 ---
 
-# CMD-008 | mkdir (Make Directory)
+# CMD-008 | mkdir
 
-📌 Purpose
+**Purpose**
 
-Create a new directory.
+Create a directory.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 mkdir <directory_name>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-mkdir Investigation
-mkdir Reports
-mkdir Evidence
-```
-
-🛡️ SOC Use
-
-Create folders for evidence, reports and malware samples.
-
-⭐ Interview
-
-Creates directories only.
+Create organised folders for reports, evidence and investigation files.
 
 ---
 
 # CMD-009 | touch
 
-📌 Purpose
+**Purpose**
 
-Create an empty file.
+Create an empty file or update its timestamps if it already exists.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 touch <file_name>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-touch report.txt
-touch notes.txt
-touch malware.sh
-```
-
-🛡️ SOC Use
-
-Create reports, notes and test files.
-
-⭐ Interview
-
-Creates an empty file if it doesn't already exist.
+Create notes or placeholder files for an investigation.
 
 ---
 
-# CMD-010 | cp (Copy)
+# CMD-010 | cp
 
-📌 Purpose
+**Purpose**
 
 Copy files or directories.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 cp <source> <destination>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-cp report.txt report_backup.txt
-cp notes.txt Reports/
-```
-
-🛡️ SOC Use
-
-Always copy evidence before analysis.
-
-⭐ Interview
-
-`cp` preserves the original.
+Preserve an original file by making a working copy before analysis.
 
 ---
 
-# CMD-011 | mv (Move)
+# CMD-011 | mv
 
-📌 Purpose
+**Purpose**
 
-Move or rename files.
+Move or rename files and directories.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 mv <source> <destination>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-mv notes.txt analyst_notes.txt
-mv analyst_notes.txt Reports/
-```
-
-🛡️ SOC Use
-
-Rename suspicious files and organize investigation data.
-
-⭐ Interview
-
-Used for both moving and renaming.
+Organise investigation files and rename working copies.
 
 ---
 
-# CMD-012 | rm (Remove)
+# CMD-012 | rm
 
-📌 Purpose
+**Purpose**
 
-Delete files.
+Remove files.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 rm <file_name>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-rm notes.txt
-rm report.txt
-```
-
-🛡️ SOC Use
-
-Remove temporary files after confirming they are no longer needed.
-
-⭐ Interview
-
-Deletes permanently (no Recycle Bin).
+Remove files only after confirming they are no longer required; deletion can affect evidence.
 
 ---
 
-# CMD-013 | rmdir (Remove Directory)
+# CMD-013 | rmdir
 
-📌 Purpose
+**Purpose**
 
-Delete an empty directory.
+Remove an empty directory.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 rmdir <directory_name>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-rmdir EmptyFolder
-```
-
-🛡️ SOC Use
-
-Clean up empty investigation folders.
-
-⭐ Interview
-
-Works only on empty directories.
+Remove empty temporary investigation directories.
 
 ---
 
 # CMD-014 | cat
 
-📌 Purpose
+**Purpose**
 
 Display the contents of a file.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 cat <file>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-cat auth.log
-cat notes.txt
-```
-
-🛡️ SOC Use
-
-Quickly read configuration files and logs.
-
-⭐ Interview
-
-Displays the entire file at once.
+Quickly read short configuration files and log files.
 
 ---
 
 # CMD-015 | less
 
-📌 Purpose
+**Purpose**
 
-View large text files one screen at a time.
+View a text file interactively one screen at a time.
 
-🧾 Example
-
+**Syntax**
 ```bash
-less /var/log/syslog
+less <file>
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Safely examine large log files without dumping everything onto the terminal.
-
-Press `q` to exit.
+Examine large logs without printing the entire file at once. Press q to exit.
 
 ---
 
 # CMD-016 | head
 
-📌 Purpose
+**Purpose**
 
 Display the first lines of a file.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 head <file>
-head -n <file>
+head -n 3 <file>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-head auth.log
-head -3 auth.log
-```
-
-🛡️ SOC Use
-
-Quickly inspect the beginning of logs.
-
-⭐ Interview
-
-Shows the first 10 lines by default.
+Inspect the beginning of a log or text file.
 
 ---
 
 # CMD-017 | tail
 
-📌 Purpose
+**Purpose**
 
-Display the end of a text file.
+Display the last lines of a file.
 
-🧾 Example
-
+**Syntax**
 ```bash
-tail -n 20 /var/log/syslog
+tail <file>
+tail -n 20 <file>
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Quickly inspect recent entries in a log file.
+Inspect recent log entries.
 
 ---
 
 # CMD-018 | grep
 
-📌 Purpose
+**Purpose**
 
-Search text for a specific pattern.
+Search file contents for lines matching a pattern.
 
-🧾 Example
-
+**Syntax**
 ```bash
 grep "Failed" /var/log/auth.log
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Find specific events or keywords inside logs.
+Filter logs for relevant events or keywords.
 
-⭐ Interview
+**Important**
 
-Very useful for filtering large amounts of log data.
-
-# CMD-019 | chmod (Change Mode)
-
-📌 Purpose
-
-Change file or directory permissions.
-
-🧾 Syntax
-
-```bash
-chmod <permissions> <file>
-```
-
-💡 Common Usage
-
-```bash
-chmod 755 backup.sh
-chmod 644 report.txt
-chmod +x script.sh
-chmod u+x script.sh
-chmod g-w script.sh
-chmod o-x script.sh
-```
-
-🛡️ SOC Use
-
-Secure files by applying the principle of least privilege and preventing unauthorized modification or execution.
-
-⭐ Interview
-
-Know the difference between numeric (755) and symbolic (u+x) permissions.
+A matching line is a lead for investigation, not proof of malicious activity.
 
 ---
 
-# CMD-020 | chown (Change Owner)
+# CMD-019 | chmod
 
-📌 Purpose
+**Purpose**
+
+Change file or directory permissions.
+
+**Syntax**
+```bash
+chmod 755 <file>
+chmod 644 <file>
+chmod +x <file>
+chmod u+x <file>
+chmod g-w <file>
+chmod o-x <file>
+```
+
+**SOC Use**
+
+Apply least-privilege permissions and prevent unauthorised modification or execution.
+
+---
+
+# CMD-020 | chown
+
+**Purpose**
 
 Change the owner of a file or directory.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 sudo chown <owner> <file>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-sudo chown root backup.sh
-```
-
-🛡️ SOC Use
-
-Transfer ownership of sensitive files to the correct user.
-
-⭐ Interview
-
-Changes the file owner.
+Assign sensitive files to the appropriate owner.
 
 ---
 
-# CMD-021 | chgrp (Change Group)
+# CMD-021 | chgrp
 
-📌 Purpose
+**Purpose**
 
 Change the group ownership of a file or directory.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 sudo chgrp <group> <file>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-sudo chgrp developers backup.sh
-```
-
-🛡️ SOC Use
-
-Grant access to the appropriate team without changing the file owner.
-
-⭐ Interview
-
-Changes only the group ownership.
+Assign files to the appropriate team group.
 
 ---
 
 # CMD-022 | whoami
 
-📌 Purpose
+**Purpose**
 
-Display the current logged-in username.
+Display the current username.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 whoami
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Verify which account is currently being used before performing administrative actions.
-
-⭐ Interview
-
-Shows only the username.
+Confirm which account is executing commands.
 
 ---
 
 # CMD-023 | id
 
-📌 Purpose
+**Purpose**
 
-Display user ID (UID), group ID (GID), and group memberships.
+Display the current user's UID, GID and group memberships.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 id
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Verify user identity and privileges during investigations.
-
-⭐ Interview
-
-Provides more information than `whoami`.
+Review account identity and group memberships during access investigations.
 
 ---
 
 # CMD-024 | groups
 
-📌 Purpose
+**Purpose**
 
-Display all groups the current user belongs to.
+Display the groups that the current user belongs to.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 groups
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Check group memberships when troubleshooting permission issues.
-
-⭐ Interview
-
-Useful for understanding access rights.
+Check group membership when investigating access and permission issues.
 
 ---
 
 # CMD-025 | who
 
-📌 Purpose
+**Purpose**
 
 Display users currently logged into the system.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 who
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Identify active user sessions during investigations.
-
-⭐ Interview
-
-May show no output on a personal desktop session, depending on how you're logged in.
+Review active login sessions.
 
 ---
 
 # CMD-026 | sudo
 
-📌 Purpose
+**Purpose**
 
-Run a command with administrative (root) privileges.
+Run a permitted command with elevated privileges.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 sudo <command>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-sudo apt update
-sudo apt upgrade
-sudo ls /root
-```
+Perform administrative tasks with controlled privilege elevation.
 
-🛡️ SOC Use
+**Important**
 
-Perform administrative tasks while following the principle of least privilege.
-
-⭐ Interview
-
-Temporarily elevates privileges for a single command.
+Use elevated privileges only when required and authorised.
 
 ---
 
 # CMD-027 | ps
 
-📌 Purpose
+**Purpose**
 
-Display currently running processes.
+Display a snapshot of processes associated with the current session.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 ps
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-ps
-```
-
-🛡️ SOC Use
-
-Quickly inspect processes running in the current session.
-
-⭐ Interview
-
-Provides a snapshot of processes.
+Inspect processes in the current terminal session.
 
 ---
 
 # CMD-028 | ps aux
 
-📌 Purpose
+**Purpose**
 
-Display detailed information about running processes.
+Display a detailed snapshot of system processes.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 ps aux
 ```
 
-💡 Important Columns
+**SOC Use**
 
-- USER
-- PID
-- %CPU
-- %MEM
-- STAT
-- COMMAND
-
-🛡️ SOC Use
-
-Investigate processes, their owners, and resource usage.
-
-⭐ Interview
-
-Know what USER, PID, %CPU and COMMAND represent.
+Review process owners, IDs, resource use and command names.
 
 ---
 
 # CMD-029 | top
 
-📌 Purpose
+**Purpose**
 
-Display a continuously updating view of running processes and system resource usage.
+Display a live, updating view of processes and system resource use.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 top
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-top
-```
-
-Press:
-
-```text
-q
-```
-
-to exit.
-
-🛡️ SOC Use
-
-Monitor CPU and memory usage and identify processes consuming unusual resources.
-
-⭐ Interview
-
-`ps` is a snapshot; `top` is a live view.
+Monitor CPU and memory use and identify processes consuming unusual resources. Press q to exit.
 
 ---
 
 # CMD-030 | kill
 
-📌 Purpose
+**Purpose**
 
-Send a signal to a process.
+Send a signal to a process identified by its PID.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 kill <PID>
 ```
 
-💡 Common Usage
+**SOC Use**
 
-```bash
-kill 4210
-```
+Request process termination when justified during administration or incident response.
 
-🛡️ SOC Use
-
-Terminate a process when appropriate during system administration or incident response.
-
-⭐ Interview
+**Important**
 
 The default signal is SIGTERM (15), which requests graceful termination.
 
@@ -827,65 +535,54 @@ The default signal is SIGTERM (15), which requests graceful termination.
 
 # CMD-031 | killall
 
-📌 Purpose
+**Purpose**
 
 Send a signal to processes matching a name.
 
-🧾 Syntax
-
+**Syntax**
 ```bash
 killall <process_name>
 ```
 
-💡 Example
+**SOC Use**
 
-```bash
-killall firefox
-```
+Terminate processes by name when appropriate.
 
-🛡️ SOC Use
+**Important**
 
-Can terminate multiple processes with the same name.
-
-⚠️ Use carefully because multiple processes may be affected.
-
-⭐ Interview
-
-`kill` normally targets a PID; `killall` targets processes by name.
+Use carefully because more than one process may match the name.
 
 ---
 
 # CMD-032 | systemctl status
 
-📌 Purpose
+**Purpose**
 
-Check the current status of a system service.
+Display the status of a systemd service.
 
-🧾 Example
-
+**Syntax**
 ```bash
-systemctl status ssh
+systemctl status <service>
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Investigate whether a service is running and inspect basic service information.
+Check whether a service is active and inspect its status information.
 
 ---
 
 # CMD-033 | systemctl list-units
 
-📌 Purpose
+**Purpose**
 
-List currently loaded service units.
+List loaded systemd units; the example filters the list to services.
 
-🧾 Example
-
+**Syntax**
 ```bash
 systemctl list-units --type=service
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
 Review services currently managed by systemd.
 
@@ -893,115 +590,126 @@ Review services currently managed by systemd.
 
 # CMD-034 | systemctl start
 
-📌 Purpose
+**Purpose**
 
 Start a service immediately.
 
-🧾 Example
-
+**Syntax**
 ```bash
-sudo systemctl start ssh
+sudo systemctl start <service>
 ```
+
+**SOC Use**
+
+Start an approved service when required.
 
 ---
 
 # CMD-035 | systemctl stop
 
-📌 Purpose
+**Purpose**
 
-Stop a service immediately.
+Stop a running service.
 
-🧾 Example
-
+**Syntax**
 ```bash
 sudo systemctl stop <service>
 ```
 
-⚠️ Use carefully because stopping critical services can affect the system.
+**SOC Use**
+
+Stop a service when a validated operational or security need exists.
+
+**Important**
+
+Stopping a critical service can disrupt the system; investigate before taking action.
 
 ---
 
 # CMD-036 | systemctl restart
 
-📌 Purpose
+**Purpose**
 
 Restart a service.
 
-🧾 Example
-
+**Syntax**
 ```bash
 sudo systemctl restart <service>
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Restart services after configuration changes when appropriate.
+Apply service restarts after approved configuration changes.
 
 ---
 
 # CMD-037 | systemctl enable
 
-📌 Purpose
+**Purpose**
 
-Configure a service to start automatically during system boot.
+Configure a service to start automatically at boot.
 
-🧾 Example
-
+**Syntax**
 ```bash
-sudo systemctl enable ssh
+sudo systemctl enable <service>
 ```
+
+**SOC Use**
+
+Review and manage expected boot-time services.
 
 ---
 
 # CMD-038 | systemctl disable
 
-📌 Purpose
+**Purpose**
 
-Prevent a service from automatically starting during system boot.
+Prevent a service from starting automatically at boot.
 
-🧾 Example
-
+**Syntax**
 ```bash
 sudo systemctl disable <service>
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Can be used when safely removing unwanted persistence or disabling unnecessary services.
+Review and manage unnecessary boot-time services.
+
+**Important**
+
+Disabling a service does not necessarily stop it immediately.
 
 ---
 
 # CMD-039 | journalctl
 
-📌 Purpose
+**Purpose**
 
-Read logs collected by the systemd journal.
+Display entries from the systemd journal.
 
-🧾 Example
-
+**Syntax**
 ```bash
 journalctl
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Review system events during investigations.
+Review system events during troubleshooting and investigations.
 
 ---
 
 # CMD-040 | journalctl -n
 
-📌 Purpose
+**Purpose**
 
-Show the most recent journal entries.
+Display the most recent journal entries.
 
-🧾 Example
-
+**Syntax**
 ```bash
 journalctl -n 20
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
 Quickly review recent system activity.
 
@@ -1009,37 +717,35 @@ Quickly review recent system activity.
 
 # CMD-041 | journalctl -b
 
-📌 Purpose
+**Purpose**
 
-Show journal entries from the current system boot.
+Display journal entries from the current boot.
 
-🧾 Example
-
+**Syntax**
 ```bash
 journalctl -b
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Investigate events that occurred since the system started.
+Investigate events that occurred during the current system session.
 
 ---
 
 # CMD-042 | journalctl -u
 
-📌 Purpose
+**Purpose**
 
-Show logs for a specific systemd service.
+Display journal entries for a specified systemd unit.
 
-🧾 Example
-
+**Syntax**
 ```bash
 journalctl -u ssh
 ```
 
-🛡️ SOC Use
+**SOC Use**
 
-Investigate activity and errors related to a specific service.
+Investigate activity and errors related to a service.
 
 ---
 
@@ -1098,7 +804,7 @@ Identify the default gateway and routes used by the system.
 
 **Purpose**
 
-Test network connectivity using ICMP Echo Requests.
+Test network reachability using ICMP Echo Requests.
 
 **Syntax**
 ```bash
@@ -1111,7 +817,7 @@ Perform basic connectivity checks.
 
 **Important**
 
-A failed ping does not necessarily mean a destination is offline.
+A failed ping does not necessarily mean the destination is offline; ICMP may be filtered.
 
 ---
 
@@ -1136,7 +842,7 @@ Check how the operating system resolves domain names.
 
 **Purpose**
 
-Query DNS records and inspect resolver responses.
+Query DNS and display resolver responses.
 
 **Syntax**
 ```bash
@@ -1163,7 +869,7 @@ dig A example.com +short
 
 **SOC Use**
 
-Investigate DNS records and potentially suspicious domain resolution.
+Inspect DNS records when investigating domain resolution.
 
 ---
 
@@ -1203,4 +909,260 @@ Inspect HTTP response headers and test web-server communication.
 
 **Important**
 
--I makes a HEAD request to retrieve response headers.
+-I sends a HEAD request. A server may not support HEAD even when the website is reachable.
+
+---
+
+# CMD-052 | apt update
+
+**Purpose**
+
+Refresh local package information from configured software repositories.
+
+**Syntax**
+```bash
+sudo apt update
+```
+
+**SOC Use**
+
+Refresh package information before checking for available software and security updates.
+
+**Important**
+
+This command does not upgrade installed packages.
+
+---
+
+# CMD-053 | apt upgrade
+
+**Purpose**
+
+Upgrade installed packages to their available newer versions.
+
+**Syntax**
+```bash
+sudo apt upgrade
+```
+
+**SOC Use**
+
+Apply approved software and security updates.
+
+**Important**
+
+Review proposed changes before confirming the upgrade.
+
+---
+
+# CMD-054 | apt search
+
+**Purpose**
+
+Search configured repositories for available software packages.
+
+**Syntax**
+```bash
+apt search nginx
+```
+
+**SOC Use**
+
+Find software packages when investigating or preparing to install applications.
+
+---
+
+# CMD-055 | apt show
+
+**Purpose**
+
+Display detailed information about a software package.
+
+**Syntax**
+```bash
+apt show nginx
+```
+
+**SOC Use**
+
+Inspect package descriptions, versions and dependencies before installation.
+
+---
+
+# CMD-056 | apt install
+
+**Purpose**
+
+Install software packages from configured repositories.
+
+**Syntax**
+```bash
+sudo apt install nginx
+```
+
+**SOC Use**
+
+Install approved software and security tools.
+
+**Important**
+
+Use trusted repositories and review proposed installation changes.
+
+---
+
+# CMD-057 | apt remove
+
+**Purpose**
+
+Remove an installed software package while generally retaining package-managed configuration files.
+
+**Syntax**
+```bash
+sudo apt remove nginx
+```
+
+**SOC Use**
+
+Remove unnecessary or unauthorised software.
+
+**Important**
+
+Review the removal plan because dependent packages may also be affected.
+
+---
+
+# CMD-058 | apt purge
+
+**Purpose**
+
+Remove an installed package along with its package-managed configuration files.
+
+**Syntax**
+```bash
+sudo apt purge nginx
+```
+
+**SOC Use**
+
+Remove unwanted software and its package-managed configuration files.
+
+**Important**
+
+This does not necessarily remove every user-created file associated with the application.
+
+---
+
+# CMD-059 | apt list --installed
+
+**Purpose**
+
+Display packages currently installed on the system.
+
+**Syntax**
+```bash
+apt list --installed
+```
+
+**SOC Use**
+
+Identify installed software during system inventory and security investigations.
+
+---
+
+# CMD-060 | apt list --upgradable
+
+**Purpose**
+
+Display installed packages that have newer versions available.
+
+**Syntax**
+```bash
+apt list --upgradable
+```
+
+**SOC Use**
+
+Identify software that may require updates, including security patches.
+
+**Important**
+
+Refresh package information with sudo apt update first.
+
+---
+
+# CMD-061 | dpkg -l
+
+**Purpose**
+
+List installed packages and their package-management status.
+
+**Syntax**
+```bash
+dpkg -l
+dpkg -l nginx
+```
+
+**SOC Use**
+
+Inspect installed software and check whether a particular package is installed.
+
+---
+
+# CMD-062 | apt-cache policy
+
+**Purpose**
+
+Display package version information, including installed and candidate versions and repository sources.
+
+**Syntax**
+```bash
+apt-cache policy nginx
+```
+
+**SOC Use**
+
+Inspect package versions and repository origins during software security investigations.
+
+---
+
+# CMD-063 | apt-get -s
+
+**Purpose**
+
+Simulate package-management operations without applying the changes.
+
+**Syntax**
+```bash
+sudo apt-get -s install nginx
+sudo apt-get -s upgrade
+sudo apt-get -s remove nginx
+```
+
+**SOC Use**
+
+Preview proposed package changes before applying them to a system.
+
+**Important**
+
+The -s option performs a simulation; it does not apply the requested package changes.
+
+---
+
+# CMD-064 | apt autoremove
+
+**Purpose**
+
+Remove packages that were automatically installed as dependencies and are no longer required.
+
+**Syntax**
+```bash
+sudo apt autoremove
+```
+
+**SOC Use**
+
+Clean up unused dependencies during system maintenance.
+
+**Important**
+
+Review the proposed package removals before confirming.

@@ -1,37 +1,16 @@
-# EP-007 - Users, Groups & Identity
+EP-007
 
-## Mission
+*Date:* Not recorded
+*Topic:* Linux Users, Groups & Identity
 
-Investigated user identities and privileges on a Linux server after an alert about unauthorized administrative activity.
+*Topics learned:*
+- The root user and administrative privileges.
+- User IDs (UIDs) and Group IDs (GIDs).
+- Linux user groups and group membership.
+- Checking the current user and active login sessions.
+- Understanding privilege elevation with `sudo`.
+- **Linux commands learned:** `whoami`, `id`, `groups`, `who`, `sudo`.
 
-## Commands Learned
+*Cybersecurity lesson:* User and group information helps analysts investigate access and privilege-related activity. Unusual administrative activity should be checked against the account's expected role and permissions.
 
-- whoami
-- id
-- groups
-- who
-- sudo
-
-## Key Concepts
-
-- Root user
-- User ID (UID)
-- Group ID (GID)
-- User groups
-- Administrative privileges
-- Principle of Least Privilege
-
-## Biggest Takeaway
-
-Understanding user identities and group memberships is essential because attackers often target privileged accounts to gain full control of a system.
-
-## Interview Questions
-
-- What is the difference between whoami and id?
-- What is the purpose of sudo?
-- Why is the root account important?
-- What are Linux groups?
-
-## Next Episode
-
-Linux Processes & Process Monitoring
+*Key takeaway:* Know which account is performing an action and what privileges that account has.

@@ -1,38 +1,15 @@
-# EP-005 - Linux Permissions (Part 1)
+EP-005
 
-## Mission
+*Date:* Not recorded
+*Topic:* Linux Permissions — Part 1
 
-Investigate why users could not access files correctly by learning how Linux permissions work.
+*Topics learned:*
+- Understanding the Linux permission string.
+- Identifying file types, owners, groups and others.
+- Understanding read (`r`), write (`w`) and execute (`x`) permissions.
+- Reading permissions shown by a long directory listing.
+- **Linux commands learned:** `ls -l`.
 
-## Commands Learned
+*Cybersecurity lesson:* File permissions control who can read, modify or execute files. Reviewing permissions helps identify access that may be broader than intended.
 
-- ls -l
-
-## Key Concepts
-
-- File permissions
-- Owner
-- Group
-- Others
-- Read (r)
-- Write (w)
-- Execute (x)
-- Permission string
-
-## Biggest Takeaway
-
-Linux permissions control who can read, modify, or execute files. Understanding the permission string is the foundation for managing secure systems.
-
-## Interview Questions
-
-- What does `-rw-r--r--` mean?
-- What is the difference between a file (`-`) and a directory (`d`)?
-- What do `r`, `w`, and `x` represent?
-
-## Next Episode
-
-Changing permissions using:
-
-- chmod
-- chown
-- chgrp
+*Key takeaway:* Learn to read the permission string before changing access on a Linux system.

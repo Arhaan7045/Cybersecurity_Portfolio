@@ -1,48 +1,15 @@
-# EP-001 - Linux Terminal Basics
+EP-001
 
-## Date
-25 July 2026
+*Date:* 25 July 2026
+*Topic:* Linux Terminal Basics
 
-## Mission
-Learn how to identify the current location in the Linux file system and list files using the terminal.
+*Topics learned:*
+- Linux terminal and basic command structure.
+- Current working directory.
+- Listing files and directories.
+- Reading detailed file and directory information.
+- **Linux commands learned:** `pwd`, `ls`, `ls -l`.
 
-## Commands Learned
+*Cybersecurity lesson:* Always confirm your current location and inspect files before performing actions on a Linux system.
 
-### pwd
-- Full Form: Print Working Directory
-- Purpose: Displays the current directory.
-- Syntax:
-  ```bash
-  pwd
-  ```
-- Used by both attackers and defenders to identify their current location.
-
-### ls
-- Purpose: Lists files and folders in the current directory.
-- Syntax:
-  ```bash
-  ls
-  ```
-
-### ls -l
-- Purpose: Lists files with detailed information such as permissions, owner, size, and modification date.
-- Syntax:
-  ```bash
-  ls -l
-  ```
-
-## Key Concepts
-- Linux Operating System
-- Terminal
-- Working Directory
-- Directories vs Files
-- Command, Option, Argument
-
-## Biggest Challenge
-Understanding the detailed output of `ls -l`.
-
-## Biggest Takeaway
-Always know your current location before performing any action in Linux.
-
-## Next Episode
-Linux File System Navigation (`cd`, `.`, `..`, `/`, `~`)
+*Key takeaway:* Know where you are in the file system before running commands.

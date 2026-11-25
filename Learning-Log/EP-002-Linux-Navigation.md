@@ -1,69 +1,15 @@
-# EP-002 - Linux Navigation
+EP-002
 
-**Series:** From Beginner to SOC Analyst
+*Date:* Not recorded
+*Topic:* Linux File System Navigation
 
-**Phase:** Linux Fundamentals
+*Topics learned:*
+- Current working directory.
+- Root directory, home directory, current directory and parent directory.
+- Absolute and relative paths.
+- Moving between directories using the terminal.
+- **Linux commands learned:** `pwd`, `ls`, `ls -l`, `cd`, `cd ..`, `cd ~`, `cd /`.
 
-**Episode:** 002
+*Cybersecurity lesson:* Analysts need to navigate efficiently between log locations, user directories and configuration files when investigating Linux systems.
 
-**Topic:** Linux Navigation
-
-**Status:** ✅ Completed
-
----
-
-## Mission
-
-Learned how to navigate the Linux file system using the terminal and reach important locations such as `/var/log`.
-
-## Commands Learned
-
-- pwd
-- ls
-- ls -l
-- cd
-- cd ..
-- cd ~
-- cd /
-
-## Key Concepts
-
-- Current Working Directory
-- Change Directory (`cd`)
-- Root Directory (`/`)
-- Home Directory (`~`)
-- Current Directory (`.`)
-- Parent Directory (`..`)
-- Absolute Path
-- Relative Path
-
-## Biggest Takeaway
-
-Linux navigation is about understanding where you are and how to move between directories using paths.
-
-## SOC Perspective
-
-Linux servers are often managed through the terminal. Security analysts need to quickly navigate between log files, user directories, and configuration files during investigations.
-
-## Interview Questions
-
-- What does `cd` do?
-- What is an absolute path?
-- What is a relative path?
-- What does `~` represent?
-- What does `..` represent?
-- What is the root directory?
-
-## Things to Remember
-
-- `pwd` shows your current location.
-- `cd` changes directories.
-- `/` is the root directory.
-- `~` is your home directory.
-- `..` moves to the parent directory.
-- Absolute paths begin with `/`.
-- Relative paths begin from your current location.
-
-## Next Episode
-
-Linux File & Directory Management
+*Key takeaway:* Understand the difference between absolute and relative paths and always know your current directory.

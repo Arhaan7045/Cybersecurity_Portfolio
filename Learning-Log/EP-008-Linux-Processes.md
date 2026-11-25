@@ -1,43 +1,16 @@
-# EP-008 - Linux Processes & Process Monitoring
+EP-008
 
-## Mission
+*Date:* Not recorded
+*Topic:* Linux Processes & Process Monitoring
 
-Investigated a Linux server reporting unusually high CPU usage and learned how to identify running processes before taking any action.
+*Topics learned:*
+- Understanding processes and Process IDs (PIDs).
+- Viewing running processes and their owners.
+- Inspecting CPU and memory usage.
+- Monitoring processes in a live view.
+- Understanding process signals and graceful versus forced termination.
+- **Linux commands learned:** `ps`, `ps aux`, `top`, `kill`, `killall`.
 
-## Commands Learned
+*Cybersecurity lesson:* Process monitoring helps identify unusual programs and resource usage. High CPU usage alone does not prove that a process is malicious; investigate a process before terminating it.
 
-- ps
-- ps aux
-- top
-- kill
-- killall
-
-## Key Concepts
-
-- Process
-- PID (Process ID)
-- CPU usage
-- Memory usage
-- Process owner
-- Process signals
-- Graceful vs forced termination
-
-## Biggest Takeaway
-
-A suspicious process should be investigated before it is terminated. High CPU usage alone does not prove that a process is malicious.
-
-## SOC Perspective
-
-Process monitoring helps analysts identify unusual programs, resource consumption, and potentially malicious activity on Linux systems.
-
-## Interview Questions
-
-- What is a process?
-- What is a PID?
-- Difference between ps and top?
-- What does kill do?
-- Why should kill -9 be used carefully?
-
-## Next Episode
-
-Linux Services
+*Key takeaway:* Identify and understand a process before taking action against it.
