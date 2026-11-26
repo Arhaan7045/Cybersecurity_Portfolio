@@ -1166,3 +1166,271 @@ Clean up unused dependencies during system maintenance.
 **Important**
 
 Review the proposed package removals before confirming.
+
+---
+
+# CMD-065 | find
+
+**Purpose**
+
+Search for files and directories under a specified starting location.
+
+**Syntax**
+```bash
+find <starting_location>
+find /home
+```
+
+**SOC Use**
+
+Locate files and directories during system investigations.
+
+---
+
+# CMD-066 | find -name
+
+**Purpose**
+
+Search for files or directories matching a specified filename pattern.
+
+**Syntax**
+```bash
+find /home -name "report.txt"
+find /var/log -name "*.log"
+find /home -iname "*.log"
+```
+
+**SOC Use**
+
+Locate specific files, log files and potentially suspicious filenames.
+
+**Important**
+
+`-name` is case-sensitive, while `-iname` is case-insensitive.
+
+---
+
+# CMD-067 | find -type
+
+**Purpose**
+
+Search for specific types of filesystem objects.
+
+**Syntax**
+```bash
+find /home -type f
+find /home -type d
+```
+
+**SOC Use**
+
+Separate regular files from directories during filesystem investigations.
+
+**Important**
+
+`f` represents regular files and `d` represents directories.
+
+---
+
+# CMD-068 | find -size
+
+**Purpose**
+
+Locate files based on their size.
+
+**Syntax**
+```bash
+find /home -type f -size +100k
+find /home -type f -size -1M
+find /home -type f -size +10M
+```
+
+**SOC Use**
+
+Identify unusually large or small files that may require further investigation.
+
+**Important**
+
+`+` means larger than the specified size; `-` means smaller. Size suffixes include `c` for bytes, `k` for KiB and `M` for MiB.
+
+---
+
+# CMD-069 | find -mtime / -mmin
+
+**Purpose**
+
+Locate files based on their last modification time.
+
+**Syntax**
+```bash
+find /home -type f -mtime -7
+find /home -type f -mtime +30
+find /home -type f -mmin -60
+```
+
+**SOC Use**
+
+Identify recently modified files or older files during system investigations.
+
+**Important**
+
+`-mtime` uses 24-hour periods, while `-mmin` uses minutes. These filters identify modification times, not proof of malicious activity.
+
+---
+
+# CMD-070 | grep -i
+
+**Purpose**
+
+Search file contents without distinguishing between uppercase and lowercase letters.
+
+**Syntax**
+```bash
+grep -i "failed" auth.log
+```
+
+**SOC Use**
+
+Find log entries when the same event may appear with different capitalisation.
+
+---
+
+# CMD-071 | grep -r
+
+**Purpose**
+
+Search recursively through files inside a directory and its subdirectories.
+
+**Syntax**
+```bash
+grep -r "failed" /var/log
+```
+
+**SOC Use**
+
+Search multiple log files for relevant events or suspicious patterns.
+
+**Important**
+
+Restrict the search to relevant directories to avoid unnecessary output and permission errors.
+
+---
+
+# CMD-072 | grep -n
+
+**Purpose**
+
+Display matching lines along with their line numbers.
+
+**Syntax**
+```bash
+grep -n "failed" auth.log
+```
+
+**SOC Use**
+
+Locate relevant events within large log files.
+
+---
+
+# CMD-073 | grep -c
+
+**Purpose**
+
+Count the number of lines matching a specified pattern.
+
+**Syntax**
+```bash
+grep -c "failed" auth.log
+```
+
+**SOC Use**
+
+Quickly count matching log lines during an investigation.
+
+**Important**
+
+Counts matching lines, not necessarily individual occurrences within those lines.
+
+---
+
+# CMD-074 | grep -v
+
+**Purpose**
+
+Display lines that do not match the specified pattern.
+
+**Syntax**
+```bash
+grep -v "INFO" auth.log
+```
+
+**SOC Use**
+
+Filter out routine log entries to examine other events.
+
+---
+
+# CMD-075 | grep -E
+
+**Purpose**
+
+Search using extended regular expressions, including alternatives and more advanced patterns.
+
+**Syntax**
+```bash
+grep -E "FAILED|DENIED" auth.log
+grep -Ein "failed|denied" auth.log
+```
+
+**SOC Use**
+
+Search for multiple event patterns in logs using a single command.
+
+**Important**
+
+The `|` operator represents OR in this regular expression.
+
+---
+
+# CMD-076 | find -exec
+
+**Purpose**
+
+Execute another command on files or directories returned by `find`.
+
+**Syntax**
+```bash
+find /var/log -type f -name "*.log" -exec ls -l {} \;
+```
+
+**SOC Use**
+
+Perform additional inspection or processing on files discovered during an investigation.
+
+**Important**
+
+`{}` represents the current result, and `\;` terminates the executed command.
+
+---
+
+# CMD-077 | find -exec grep
+
+**Purpose**
+
+Locate matching files with `find` and search their contents using `grep`.
+
+**Syntax**
+```bash
+find /var/log -type f -name "*.log" -exec grep -Hni "failed" {} \;
+
+find /var/log -type f -name "*.log" -exec grep -Hni "failed" {} +
+```
+
+**SOC Use**
+
+Search multiple log files for suspicious patterns while displaying filenames and line numbers.
+
+**Important**
+
+`\;` executes the command separately for each result. `+` passes multiple results together in batches, reducing the number of command executions.
