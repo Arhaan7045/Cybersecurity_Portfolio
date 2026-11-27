@@ -1434,3 +1434,222 @@ Search multiple log files for suspicious patterns while displaying filenames and
 **Important**
 
 `\;` executes the command separately for each result. `+` passes multiple results together in batches, reducing the number of command executions.
+
+---
+
+# CMD-078 | tar -cf
+
+**Purpose**
+
+Create an uncompressed TAR archive containing files or directories.
+
+**Syntax**
+```bash
+tar -cf evidence.tar evidence/
+```
+
+**SOC Use**
+
+Package multiple investigation files into a single archive while preserving their directory structure.
+
+**Important**
+
+TAR archives files but does not compress them unless a compression option is used.
+
+---
+
+# CMD-079 | tar -czf
+
+**Purpose**
+
+Create a TAR archive and compress it using Gzip.
+
+**Syntax**
+```bash
+tar -czf evidence.tar.gz evidence/
+```
+
+**SOC Use**
+
+Package and compress investigation evidence for storage or transfer.
+
+**Important**
+
+`-c` creates the archive, `-z` enables Gzip compression and `-f` specifies the archive filename.
+
+---
+
+# CMD-080 | tar -tzf
+
+**Purpose**
+
+List the contents of a Gzip-compressed TAR archive without extracting it.
+
+**Syntax**
+```bash
+tar -tzf evidence.tar.gz
+tar -tvzf evidence.tar.gz
+```
+
+**SOC Use**
+
+Inspect archive contents, filenames and file metadata before extraction.
+
+**Important**
+
+`-t` lists contents and `-v` displays a more detailed listing.
+
+---
+
+# CMD-081 | tar -xzf
+
+**Purpose**
+
+Extract files from a Gzip-compressed TAR archive.
+
+**Syntax**
+```bash
+tar -xzf evidence.tar.gz
+tar -xzf evidence.tar.gz -C /home/user/restore/
+```
+
+**SOC Use**
+
+Extract archived investigation files into a designated working directory.
+
+**Important**
+
+Inspect unfamiliar archive contents before extraction. Avoid unnecessary administrator privileges.
+
+---
+
+# CMD-082 | gzip
+
+**Purpose**
+
+Compress individual files using the Gzip compression format.
+
+**Syntax**
+```bash
+gzip notes.txt
+gzip -k notes.txt
+```
+
+**SOC Use**
+
+Compress individual logs and files to reduce storage requirements.
+
+**Important**
+
+Gzip normally removes the original after successful compression. The `-k` option keeps the original file.
+
+---
+
+# CMD-083 | gunzip
+
+**Purpose**
+
+Decompress files compressed using Gzip.
+
+**Syntax**
+```bash
+gunzip notes.txt.gz
+gunzip -k notes.txt.gz
+gunzip -c notes.txt.gz
+```
+
+**SOC Use**
+
+Restore compressed log files and evidence for inspection.
+
+**Important**
+
+`-k` keeps the compressed original. `-c` sends decompressed data to standard output.
+
+---
+
+# CMD-084 | file
+
+**Purpose**
+
+Identify the type of a file by examining its contents.
+
+**Syntax**
+```bash
+file evidence.dat
+file archive.tar.gz
+```
+
+**SOC Use**
+
+Identify potentially suspicious files and verify whether their actual type matches their filename extension.
+
+**Important**
+
+A filename extension alone does not establish the actual file type.
+
+---
+
+# CMD-085 | sha256sum
+
+**Purpose**
+
+Calculate or verify SHA-256 checksums for files.
+
+**Syntax**
+```bash
+sha256sum evidence.tar.gz
+sha256sum evidence.tar.gz > evidence.tar.gz.sha256
+sha256sum -c evidence.tar.gz.sha256
+```
+
+**SOC Use**
+
+Verify file integrity when storing, transferring or analysing investigation evidence.
+
+**Important**
+
+A matching hash supports integrity against a trusted reference. It does not prove that a file is safe or authentic.
+
+---
+
+# CMD-086 | du -sh
+
+**Purpose**
+
+Display the total disk usage of a file or directory in human-readable format.
+
+**Syntax**
+```bash
+du -sh evidence/
+```
+
+**SOC Use**
+
+Check storage usage before archiving, transferring or extracting investigation data.
+
+**Important**
+
+`-s` displays a summary and `-h` uses human-readable units.
+
+---
+
+# CMD-087 | mktemp -d
+
+**Purpose**
+
+Create a uniquely named temporary directory.
+
+**Syntax**
+```bash
+mktemp -d
+mktemp -d /tmp/extracted.XXXXXX
+```
+
+**SOC Use**
+
+Create a separate working directory for safely inspecting and extracting unfamiliar files.
+
+**Important**
+
+A separate directory helps organise extracted contents but is not a replacement for a security sandbox.
